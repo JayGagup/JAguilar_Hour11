@@ -6,10 +6,19 @@ public class PrefabGenerator : MonoBehaviour
 {
     public GameObject prefab;
 
-    // Start is called before the first frame update
+    public Vector3 firstPosition;
+    public float gap = 2;
+
     void Start()
     {
-        
+        Vector3 position = firstPosition;
+        for (int i = 0; i < 10; i++)
+        {
+            Instantiate(prefab, position, Quaternion.identity);
+            position.x += gap;
+            // Start is called before the first frame update
+           
+        }
     }
 
     // Update is called once per frame
